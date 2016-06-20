@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+		<meta content="application/xhtml+xml; charset=utf-8" http-equiv="content-type" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Tunnel Details</title>
+		<link media="screen, print" href="/css/style.css" type="text/css" rel="stylesheet" />
+		<link href="/css/smoothness/jquery-ui-1.11.1.custom.css" type="text/css" rel="stylesheet" />
+		<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="/js/jquery-ui-1.11.1.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="page_center">
+			<div id="header">
+				<a href="http://he.net/"><img height="100" width="408" alt="Hurricane Electric Internet Services" src="/images/helogo.gif" /></a>
+			</div>
+	<div id="navigation" class="sidebar">
+	<div class="block">
+		<div class="caption">Account Menu</div>
+		<ul class="menu">
+			<li>
+				<a class="heavy" href="/">Main Page</a>
+				<ul class="submenu">
+					<li><a class="heavy" href="/account.php">Account Info</a></li>
+					<li><a class="heavy" href="/logout.php">Logout</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="block">
+		<div class="caption">User Functions</div>
+		<ul class="menu">
+			<li><a class="heavy" href="/new_tunnel.php">Create Regular Tunnel</a></li>
+			<li><a class="heavy" href="/new_tunnel.php?type=bgp">Create BGP Tunnel</a></li>
+			<li><a class="heavy" href="/portscan.php">IPv6 Portscan</a></li>
+		</ul>
+	</div>
+</div>			<div id="content">
+				<div class="block">
+					<div class="caption">Tunnel Details<span id="processing"></span></div>
+					<div class="content">
+<style type="text/css">
+#tabs * {
+	font-size: 14px;
+	font-family: arial, sans-serif;
+}
+#tabs * div.tabContent div {
+	padding: 3px;
+}
+#tabs * div.tabContent div input {
+	height: 16px;
+	text-align: right;
+	padding-top: 0px
+}
+#tabs * div.tabContent div.sectionHeader {
+	border-top: 1px solid black;
+	margin-top: 8px;
+	font-weight: bold;
+}
+#tabs * div.tabContent div span:first-child:before {
+	content: '';
+	padding-right: 19px;
+}
+#tabs * div.tabContent div span[title]:before {
+	content: url(/images/icon.gif);
+	padding-right: 5px;
+}
+div.row {
+	clear: both;
+	padding-top: 10px;
+}
+.ui-slider {
+	height: 5px;
+}
+</style>
+
+<div style="width:99%" id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+ <ul style="font-size: 75%" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+  <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="false" aria-expanded="false"><a href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">IPv6 Tunnel</a></li>
+  <li class="ui-state-default ui-corner-top ui-state-focus ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="true" aria-expanded="true"><a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Example Configurations</a></li>
+  <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-4" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#tabs-4" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Advanced</a></li>
+ </ul>
+ <div id="tabs-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+  <div class="tabContent">
+   <div><span title="td1" class="helpBubble">Tunnel ID: 345034</span><span style="float: right"><form method="post" action="/tunnel_detail.php?tid=345034"><input type="submit" onclick="return confirm('Are you sure you want to delete this tunnel?');" value="Delete Tunnel" name="delete" style="height: 1.5em" /></form></span></div>
+   <div><span title="td10" class="helpBubble">Creation Date:</span><span style="float: right">Jun 15, 2016</span></div>
+   <div><span title="td_userdesc" class="helpBubble">Description:</span><span style="float: right"><input type="text" value="" size="32" id="description" /></span></div>
+   <div class="sectionHeader">IPv6 Tunnel Endpoints</div>
+   <div><span title="td2" class="helpBubble">Server IPv4 Address:</span><span style="float: right">216.66.84.46</span></div>
+   <div><span title="td3" class="helpBubble">Server IPv6 Address:</span><span style="float: right">2001:470:<b>1f14</b>:72f::1/64</span></div>
+   <div><span title="td4" class="helpBubble">Client IPv4 Address:</span><span id="ipv4z" style="float: right"><span style="display: none" id="vpn_ip"></span><span id="normal_ip"><a onclick="return false" title="Edit Endpoint" id="edit_ipv4z" href="ipv4_update.php?tid=345034">37.139.4.201</a><input type="text" style="display: none" id="new_ipv4z" /></span></span></div>
+   <div style="display: none; clear: both" id="ipResult"></div>
+   <div><span title="td5" class="helpBubble">Client IPv6 Address:</span><span style="float: right">2001:470:<b>1f14</b>:72f::2/64</span></div>
+   <div class="sectionHeader">Routed IPv6 Prefixes</div>
+   <div><span title="td7" class="helpBubble">Routed /64:</span><span style="float: right">2001:470:<b>1f15</b>:72f::/64</span></div>
+   <div><span title="td6" class="helpBubble">Routed /48:</span><span id="routed_48" style="float: right">2001:470:7ae6::/48 <a onclick="return false" title="Remove /48" href="#" id="remove48">[X]</a></span></div>
+   <div class="sectionHeader">Available DNS Resolvers</div>
+   <div><span title="td12" class="helpBubble">Anycasted IPv6 Caching Nameserver:</span><span style="float: right">2001:470:20::2</span></div>
+   <div><span>Anycasted IPv4 Caching Nameserver:</span><span style="float: right">74.82.42.42</span></div>
+   <div class="sectionHeader">rDNS Delegations<span style="float: right"><a onclick="return false" title="Edit rDNS Delegation" id="editrdns" href="/nsupdate.php?tid=345034">Edit</a><span style="display: none" class="saverdns"><a id="setDelegated" onclick="return false" href="#">Delegate to dns.he.net</a> | <a id="saverdns" onclick="return false" href="#">Save</a></span></span></div>
+   <div style="display: none; clear: both" id="dnsResult"></div>
+   <div><span title="td8" class="helpBubble">rDNS Delegated NS1:</span><span id="ns1block" style="float: right"></span></div>
+   <div style="clear: right"><span>rDNS Delegated NS2:</span><span id="ns2block" style="float: right"></span></div>
+   <div style="clear: right"><span>rDNS Delegated NS3:</span><span id="ns3block" style="float: right"></span></div>
+   <div style="clear: right"><span>rDNS Delegated NS4:</span><span id="ns4block" style="float: right"></span></div>
+   <div style="clear: right"><span>rDNS Delegated NS5:</span><span id="ns5block" style="float: right"></span></div>
+  </div>
+ </div>
+ <div id="tabs-2" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" style="display: block;" aria-hidden="false">
+  <div class="tabContent">
+   <select id="examples" name="examples">
+    <option value="">Select Your OS</option>
+    <option value="17" label="Apple Airport">Apple Airport</option>
+<option value="24" label="Check Point R77 GAiA">Check Point R77 GAiA</option>
+<option value="12" label="Cisco IOS">Cisco IOS</option>
+<option value="19" label="CoyotePoint Equalizer">CoyotePoint Equalizer</option>
+<option value="20" label="Debian/Ubuntu">Debian/Ubuntu</option>
+<option value="16" label="Fortigate 4.x-5.x">Fortigate 4.x-5.x</option>
+<option value="4" label="FreeBSD &lt; 4.4">FreeBSD &lt; 4.4</option>
+<option value="5" label="FreeBSD &gt;= 4.4">FreeBSD &gt;= 4.4</option>
+<option value="13" label="JunOS">JunOS</option>
+<option value="14" label="JunOS ES">JunOS ES</option>
+<option value="2" label="Linux-net-tools">Linux-net-tools</option>
+<option value="1" label="Linux-route2">Linux-route2</option>
+<option value="23" label="Mac OS X">Mac OS X</option>
+<option value="8" label="Mikrotik">Mikrotik</option>
+<option value="6" label="NetBSD">NetBSD</option>
+<option value="3" label="OpenBSD">OpenBSD</option>
+<option value="18" label="OpenWRT Backfire 10.03.1">OpenWRT Backfire 10.03.1</option>
+<option value="26" label="OpenWRT Barrier Breaker">OpenWRT Barrier Breaker</option>
+<option value="21" label="pfSense 2.1+">pfSense 2.1+</option>
+<option value="15" label="ScreenOS 6.2.0r1.0">ScreenOS 6.2.0r1.0</option>
+<option value="7" label="Solaris">Solaris</option>
+<option value="11" label="Vyatta / Ubiquiti EdgeMAX">Vyatta / Ubiquiti EdgeMAX</option>
+<option value="27" label="Windows 10">Windows 10</option>
+<option value="9" label="Windows 2000/XP">Windows 2000/XP</option>
+<option value="10" label="Windows Vista/2008/7/8">Windows Vista/2008/7/8</option>
+
+   </select>
+   <div class="infoMessageBox">
+    <div id="commands">
+     <div style="padding-right: 0" id="commandsDescription">Paste the following into /etc/network/interfaces:</div>
+     <textarea id="exampleConfig" cols="75" rows="10" style="font: 11px monospace">auto he-ipv6
+iface he-ipv6 inet6 v4tunnel
+        address 2001:470:1f14:72f::2
+        netmask 64
+        endpoint 216.66.84.46
+        local 37.139.4.201
+        ttl 255
+        gateway 2001:470:1f14:72f::1</textarea>
+    </div>
+    <div style="display: none" id="additionalNotes"></div>
+     <br />
+    <b>NOTE:</b> When behind a firewall appliance that passes protocol 41, use the IPv4 address you get from your appliance's DHCP service instead of the IPv4 endpoint you provided to our broker.<br />
+    <br />
+    The configurations provided are example configurations and may be different depending on the version of the OS or the tools you are using.
+    If you have any issues getting your tunnel to work please contact us at <a href="mailto:ipv6@he.net?subject=Example+Configurations">ipv6@he.net</a> and we will be happy to assist you.   </div>
+  </div>
+ </div>
+ <div id="tabs-4" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" style="display: none;" aria-hidden="true">
+  <div class="tabContent">
+   <div class="sectionHeader">Tunnel Options</div>
+   <div class="infoMessageBox">These settings will not need changing under normal circumstances.</div>
+                  <div>
+    <span>MTU:</span>
+    <span style="clear: both; float: right">
+     <span id="mtuValue">(Default) 1480</span>
+     <div id="mtuSlider" style="display: inline-block; width: 200px; margin-right: 10px; margin-left: 10px" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><span tabindex="0" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 100%;"></span></div>
+     <input type="submit" style="height: 1.5em" value="Update" id="changeMTU" name="changeMTU" disabled="disabled" />
+    </span>
+   </div>
+   <div id="updateKey"><span title="updateKey" class="helpBubble">Update Key:</span><span style="float: right"><input type="text" value="51X1F8YWQ8ZHDuHA" size="32" id="updateKeyField" /></span></div>
+   <div style="" id="updateUrl"><span title="urlHelpBubble" class="helpBubble">Example Update URL:</span><span style="float: right"><input type="text" readonly="readonly" size="56" id="updateUrlField" /></span></div>
+
+      <div class="sectionHeader">HE Dynamic DNS Settings</div>
+   <div class="infoMessageBox">These settings will be used to automatically update the hostname below whenever you update your tunnel's IPv4 endpoint using the DynDNS-compatible mechanism at https://ipv4.tunnelbroker.net/nic/update.  This is only for hostnames set dynamic with dns.he.net.</div>
+   <div style="display: none; clear: both" id="ddnsResult"></div>
+   <div style="clear: right">
+    <span>Last Status:</span>
+    <span id="ddnsLastStatus" style="float: right">
+     N/A @ N/A
+    </span>
+   </div>
+   <div style="clear: right">
+    <span>Hostname:</span>
+    <span style="float: right">
+     <input type="text" value="" id="ddnsHostname" name="ddnsHostname" size="50" />
+    </span>
+   </div>
+   <div style="clear: right">
+    <span>API Key:</span>
+    <span style="float: right">
+     <input type="text" value="" id="ddnsAuthToken" name="ddnsAuthToken" size="50" />
+    </span>
+   </div>
+   <div style="padding-bottom: .5em">
+    <span style="float: right; clear: both">
+     <input type="submit" id="ddnsClear" name="ddnsClear" value="Clear" style="height: 1.5em" disabled="disabled" />
+     <input type="submit" id="ddnsRefresh" name="ddnsRefresh" value="Refresh" style="height: 1.5em" disabled="disabled" />
+     <input type="submit" id="ddnsSubmit" name="ddnsSubmit" value="Save" style="height: 1.5em" disabled="disabled" />
+    </span>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+<script type="text/javascript">
+	String.prototype.format = function() {
+    	var formatted = this;
+    	for (var i = 0; i &lt; arguments.length; i++) {
+        	var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+        	formatted = formatted.replace(regexp, arguments[i]);
+    	}
+    	return formatted;
+	};
+
+	var tunnelIp;
+	var tunnelMtu = 1480;
+	var bgpDefaultOnly = $('#defaultOriginate').is(':checked');
+
+	$(document).ready(function(){
+		$(document).ajaxStart(function() {
+			$('#processing').html(' - Working... &lt;img src="/images/ajax-loader.gif" /&gt;');
+		});
+		$(document).ajaxStop(function() {
+			$('#processing').html('');
+		});
+		$("#tabs").tabs();
+		$('#helpDialog').dialog({
+			title: "Help Viewer",
+			autoOpen: false
+		});
+		$('.helpBubble').on('click', function() {
+			$.post('help.php', { "helpid": $(this).attr("title") }, function(data) {
+				$('#helpDialog').html(data.content);
+				$('#helpDialog').dialog('option', 'title', data.title);
+				$('#helpDialog').dialog('open');
+			}, "json");
+		});
+		$('#examples').on('change', function() {
+			if($('#examples').val()) {
+				$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"config": $('#examples').val() }, function(data) {
+					if(data.commands) {
+						$('#commands').show();
+						$('#exampleConfig').text(data.commands);
+					} else {
+						$('#commands').hide();
+					}
+					if(data.additionalNotes) {
+						$('#additionalNotes').show();
+						$('#additionalNotes').html(data.additionalNotes);
+					} else {
+						$('#additionalNotes').hide();
+					}
+					if(data.description) {
+						$('#commandsDescription').text(data.description);
+					}
+				}, 'json');
+			} else {
+				$('#exampleConfig').text('');
+			}
+		});
+		$('#description').on('blur', function() {
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"description": $('#description').val() }, function(data) {}, 'text');
+		});
+		$('#updateKeyField').on('blur', function() {
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"setKey": $('#updateKeyField').val() }, function(data) {}, 'text');
+		});
+		$('#updateKeyField').on('keyup', function() {
+			if($('#updateKeyField').val().length &gt; 0) {
+				$('#updateUrl').show();
+			} else {
+				$('#updateUrl').hide();
+			}
+			$('#updateUrlField').val('https://kredix123:'+$('#updateKeyField').val()+'@ipv4.tunnelbroker.net/nic/update?hostname=345034');
+		});
+		$('#updateKeyField').trigger('keyup');
+
+		$(document).on('click', '#remove48', function() {
+			routed48 = $('#routed_48').text().substring(0, $('#routed_48').text().length-4);
+			if(!confirm('This will remove {0} from your tunnel.  Are you sure?'.format(routed48))) { return; }
+			$('#routed_48').text('Removing...');
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"remove48": 'true' }, function(data) {
+				if(data.length &gt; 0) {
+					$('#routed_48').text(data);
+				} else {
+					$('#routed_48').html('&lt;a id="assign48" href="#" onclick="return false"&gt;Assign /48&lt;a&gt;');
+				}
+			}, 'text');					
+		});
+		$('#edit_ipv4z').on('click', function() {
+			tunnelIp = $('#edit_ipv4z').text();
+			$('#new_ipv4z').val(tunnelIp);
+			$('#new_ipv4z').show();
+			$('#edit_ipv4z').hide();
+		});
+		$('#new_ipv4z').on('blur', function() {
+			if($('#new_ipv4z').val().length == 0) {
+				// Do nothing
+			} else if(tunnelIp != $('#new_ipv4z').val()) {
+				$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"ipv4z": $('#new_ipv4z').val() }, function(data) {
+					if(data.length &gt; 0) {
+						$('#ipResult').show();
+						$('#ipResult').removeClass().addClass('errorMessageBox');
+						$('#ipResult').html(data);
+					} else {
+						$('#ipResult').show();
+						$('#ipResult').removeClass().addClass('validMessageBox');
+						$('#ipResult').text('New IP endpoint set!');
+						$('#edit_ipv4z').text($('#new_ipv4z').val());
+						$('#edit_ipv4z').show();
+						$('#new_ipv4z').hide();
+					}
+				}, 'text');
+			} else {
+				$('#ipResult').hide();
+				$('#edit_ipv4z').text($('#new_ipv4z').val());
+				$('#edit_ipv4z').show();
+				$('#new_ipv4z').hide();
+			}
+		});
+		$(document).on('click', 'a#unblockIRC', function() {
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"unblockIRC": 'true' }, function(data) {
+				if(data.length &gt; 0) {
+					$('div#unblockIRC').hide();
+				}
+			}, 'text');
+		});
+		$(document).on('click', 'a#unblockSMTP', function() {
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"unblockSMTP": 'true' }, function(data) {
+				if(data.length &gt; 0) {
+					$('div#unblockSMTP').hide();
+				}
+			}, 'text');
+		});
+		$('#mtuSlider').slider({
+			value: tunnelMtu,
+			min: 1280,
+			max: 1480,
+			step: 4,
+			slide: mtuChange,
+			change: mtuChange
+		});
+		mtuChange(null, { value: tunnelMtu });
+		$(document).on('click', '#changeMTU', function() {
+			$('#changeMTU').attr('disabled', 'disabled');
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {'mtu': $('#mtuSlider').slider('value')}, function(data) {
+				tunnelMtu = data;
+			}, 'text');
+		});
+
+		$('#changeBGP').attr('disabled', 'disabled');
+		$('#defaultOriginate').change(function() {
+			if($(this).is(':checked') == bgpDefaultOnly) {
+				$('#changeBGP').attr('disabled', 'disabled');
+			} else {
+				$('#changeBGP').removeAttr('disabled');
+			}
+		});
+		$(document).on('click', '#changeBGP', function() {
+			$('#changeBGP').attr('disabled', 'disabled');
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {'defaultOriginate': $('#defaultOriginate').is(':checked')}, function(data) {
+				bgpDefaultOnly = data;
+			});
+		});
+		$(document).on('click', '#assign48', function() {
+			$('#routed_48').text('Allocating...');
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"assign48": 'true' }, function(data) {
+				if(data.indexOf('Error:') == -1) {
+					data += ' &lt;a id="remove48" href="#" title="Remove /48" onclick="return false"&gt;[X]&lt;/a&gt;';
+				}
+				$('#routed_48').html(data);
+			}, 'text');					
+		});
+		if($('#editrdns')) {
+			var $nss = [$('#ns1block'), $('#ns2block'), $('#ns3block'), $('#ns4block'), $('#ns5block')];
+			$('#editrdns').on('click', function() {
+				$('#editrdns').hide();
+				$('.saverdns').show();
+				$.each($nss, function(i, elem) {
+					elem.html('&lt;input type="text" value="'+elem.text()+'" id="ns'+(i+1)+'" maxlength="255" /&gt;');
+				});
+			});
+			$('#saverdns').on('click', function() {
+				$('#saverdns').text('Saving...');
+				$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {"ns1": $('#ns1').val(), "ns2": $('#ns2').val(), "ns3": $('#ns3').val(), "ns4": $('#ns4').val(), "ns5": $('#ns5').val() }, function(data) {
+					if(data.length &gt; 0) {
+						$('#dnsResult').show();
+						$('#dnsResult').removeClass().addClass('errorMessageBox');
+						$('#dnsResult').html(data);
+						$('#saverdns').text('Save');
+						return;
+					} else {
+						$.each($nss, function(i, elem) {
+							elem.text($('#ns'+(i+1)).val());
+						});
+						$('#dnsResult').hide();
+						$('.saverdns').hide();
+						$('#saverdns').text('Save');
+						$('#editrdns').show();
+					}
+				}, 'text');
+			});
+			$('#setDelegated').on('click', function() {
+				$('#ns1').val('ns1.he.net');
+				$('#ns2').val('ns2.he.net');
+				$('#ns3').val('ns3.he.net');
+				$('#ns4').val('ns4.he.net');
+				$('#ns5').val('ns5.he.net');
+				$('#saverdns').trigger('click');
+			});
+		}
+		$('#ddnsRefresh').on('click', function() {
+			$('#ddnsLastStatus').text('Refreshing...');
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {'ddnsRefresh': true}, function(data) {
+				if(data.status != 0) {
+					$('#ddnsResult').show();
+					$('#ddnsResult').removeClass().addClass('errorMessageBox');
+					$('#ddnsResult').text(data.output);
+				} else {
+					$('#ddnsResult').hide();
+					$('#ddnsLastStatus').text(data.output);
+				}
+			}, 'json');
+		});
+		$('#ddnsSubmit').on('click', function() {
+			$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {'ddnsSubmit': true, 'ddnsHostname': $('#ddnsHostname').val(), 'ddnsAuthToken': $('#ddnsAuthToken').val() }, function(data) {
+				if(data.length &gt; 0) {
+					$('#ddnsResult').show();
+					$('#ddnsResult').removeClass().addClass('errorMessageBox');
+					$('#ddnsResult').text(data.message);						
+				} else {
+					$('#ddnsLastStatus').text('None');
+					$('#ddnsResult').show();
+					$('#ddnsResult').removeClass().addClass('validMessageBox');
+					$('#ddnsResult').text('DDNS information saved');
+					$('#ddnsRefresh').removeAttr('disabled');
+					$('#ddnsSubmit').attr('disabled', 'disabled');
+				}
+			});
+		});
+		$('#ddnsClear').on('click', function() {
+			if(confirm('Clearing these settings will cause your hostname to no longer update with your tunnel endpoint.  Continue?')) {
+				$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {'ddnsClear': true}, function(data) {
+					if(data.length &gt; 0) {
+						$('#ddnsResult').show();
+						$('#ddnsResult').removeClass().addClass('errorMessageBox');
+						$('#ddnsResult').text(data);						
+					} else {
+						$('#ddnsHostname').val('');
+						$('#ddnsAuthToken').val('');
+						$('#ddnsLastStatus').text('None');
+						$('#ddnsResult').show();
+						$('#ddnsResult').removeClass().addClass('validMessageBox');
+						$('#ddnsResult').text('DDNS information removed');
+						$('#ddnsClear').attr('disabled', 'disabled');
+						$('#ddnsSubmit').attr('disabled', 'disabled');
+						$('#ddnsRefresh').attr('disabled', 'disabled');
+					}
+				});
+			}
+		});
+		var validDdns = true;
+		$('#ddnsSubmit').attr('disabled', 'disabled');
+		if(!$('#ddnsHostname').val() &amp;&amp; !$('#ddnsAuthToken').val()) {
+			$('#ddnsClear').attr('disabled', 'disabled');
+			$('#ddnsRefresh').attr('disabled', 'disabled');
+		}
+		$('#ddnsHostname').on('keyup', function() {
+			$('#ddnsClear').removeAttr('disabled');
+		});
+		$('#ddnsAuthToken').on('keyup', function() {
+			if($('#ddnsHostname').val() &amp;&amp; validDdns == true) {
+				$('#ddnsSubmit').removeAttr('disabled');
+			}
+			$('#ddnsClear').removeAttr('disabled');
+		});
+		$('#ddnsHostname').on('blur', function() {
+			if($(this).val()) {
+				$.post('/tunnel_detail.php?tid=345034&amp;ajax=true', {'ddnsHostname': $('#ddnsHostname').val() }, function(data) {
+					if(data.length &gt; 0) {
+						$('#ddnsResult').show();
+						$('#ddnsResult').removeClass().addClass('errorMessageBox');
+						$('#ddnsResult').text(data);			
+						$('#ddnsSubmit').attr('disabled', 'disabled');
+						validDdns = false;
+					} else {
+						$('#ddnsResult').hide();
+						$('#ddnsSubmit').removeAttr('disabled');
+						validDdns = true;
+					}
+				});
+			}
+		});
+	});
+
+function mtuChange(event, ui) {
+	switch(ui.value) {
+		case 1480:
+			$('#mtuValue').html("(Default) " + ui.value);
+			break;
+		case 1472:
+		case 1460:
+		case 1452:
+			$('#mtuValue').html("(Some PPPoE) " + ui.value);
+			break;
+		case 1280:
+			$('#mtuValue').html("(Minimum) " + ui.value);
+			break;
+		default:
+			$('#mtuValue').html(ui.value);
+			break;
+	}
+	if(ui.value == tunnelMtu) {
+		$('#changeMTU').attr('disabled', 'disabled');
+	} else {
+		$('#changeMTU').removeAttr('disabled');
+	}
+}
+</script>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="rightbar" class="sidebar">
+				<div class="block">
+					<div class="caption">Quick Links</div>
+					<div class="content">
+						<a href="http://ipv6.he.net/certification/">Certification</a><br />
+						<a href="http://www.tunnelbroker.net/">Tunnelbroker</a><br />
+						<a href="http://dns.he.net/">Free DNS</a><br />
+						<a href="http://bgp.he.net">BGP Toolkit</a><br />
+						<a href="http://networktools.he.net">Net Tools App</a><br />
+						<a href="/forums/">Forums</a><br />
+						<a href="http://ipv6.he.net/certification/faq.php">FAQ</a><br />
+						<a href="http://ipv6.he.net/presentations.php">Video Presentations</a><br />
+						<a href="/usage/">Usage Statistics</a><br />
+						<a href="/status.php">Tunnel Server Status</a><br />
+						<a href="http://he.net/HurricaneElectricNetworkMap.pdf">Network Map</a><br />
+						<a href="http://lg.he.net">Looking Glass</a> (v4/v6)<br />
+						<a href="telnet://route-server.he.net">Route Server</a> (telnet)<br />
+						<a href="http://bgp.he.net/ipv6-progress-report.cgi">Global IPv6 Report</a><br />
+						<a href="http://ipv6.he.net/bgpview/bgp.html">IPv6 BGP View</a>
+					</div>
+				</div>
+				<div class="block">
+					<div class="caption">Services</div>
+					<div class="content">
+						<a href="http://he.net/ip_transit.html">Transit</a><br />
+						<a href="http://he.net/colocation.html">Colocation</a><br />
+						<a href="http://he.net/dedicated_server.html">Dedicated Servers</a>
+					</div>
+				</div>
+				<div aria-live="off" role="region" style="text-align: center" id="exhaustioncounter" class="block">
+					<div class="caption">v4 Exhaustion</div>
+					<br />
+					<script src="//ipv6.he.net/v4ex/sidebar.js" type="text/javascript"></script><iframe height="431px" frameborder="0" width="132px" style="margin-bottom: 10px;" allowtransparency="true" src="https://ipv6.he.net/v4ex/sidebar/?" scrolling="no"></iframe>
+				</div>
+			</div>
+			<div id="footer">
+				<address id="footer_left">Hurricane Electric<br />760 Mission Court<br />Fremont, CA  94539</address>
+				<span id="footer_right">Voice +1 (510) 580-4100<br />Fax +1 (510) 580-4151<br />Comments? <a href="mailto:info@he.net">info@he.net</a></span>
+				<span id="footer_center">Copyright © 1994-2016 Hurricane Electric.<br />All Rights Reserved<br /><a target="_new" href="/tos.php">Terms of Service</a></span>
+			</div>
+		</div>
+		<!--
+		<script src="//www.google-analytics.com/urchin.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			_uacct = "UA-2238649-1";
+			urchinTracker();
+		</script>
+		-->
+	
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="helpDialog" aria-labelledby="ui-id-4"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-4" class="ui-dialog-title">Help Viewer</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="helpDialog" class="ui-dialog-content ui-widget-content"></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div></body></html>

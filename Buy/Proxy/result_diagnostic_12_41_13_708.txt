@@ -1,0 +1,416 @@
+﻿Входные настройки: 
+===============================
+Прокси-сервер: delegate 9.9.13
+Устанавливаем прокси для: IPv6
+Типы устанавливаемых прокси: HTTP(s)
+Необходима ли авторизация по логину и паролю: True
+Генерировать случайные логин и пароль: True
+Значения поля логин для прокси: 
+Необходимо ли ограничивать доступ по IP: False
+Необходимо ли вести логи подключений на сервере: False
+Убираем HTTP заголовки: Via, From
+Единый IPv4-адрес для подключений: True
+Использовать все найденные IPv4-адреса на сервере: True
+Количество создаваемых прокси каждого типа: 1
+Начальный порт SOCKSv5: 12000
+Начальный порт HTTP: 16000
+Ограничение доступа к сайтам: 
+===============================
+(ИНФО) Проверка входных настроек
+===============================
+(ИНФО) Выбранные типы прокси: HTTP(s)
+(ИНФО) Первичная проверка нумерации SOCKS портов прошла успешно
+(ИНФО) Первичная проверка нумерации HTTP портов прошла успешно
+(ИНФО) Файлы с результатами SOCKS-прокси будут сохранены в директории проекта
+(ИНФО) Файлы с результатами HTTP-прокси будут сохранены в директории проекта
+(ИНФО) Поля расположения файлов SOCKSv5 и HTTP с результатами создания прокси указаны верно
+(ИНФО) Редактирование списка заголовков успешно выполнено
+===============================
+Обработка Excel файла:
+Успешно получена 1 строка
+Получено значение IP-адреса сервера из 1 ячейки
+Получено значение логина сервера из 2 ячейки
+Получено значение пароля сервера из 3 ячейки
+Успешно удалена 1 строка
+Успешно добавлена строка
+(ОК) Проверка логина прошла успешно
+(ОК) Проверка IP-адреса прошла успешно
+(ОК) Проверка пароля прошла успешно
+(ОК) Установлено значение стандартного SSH порта для сервера
+(ОК) Порт для подключения к серверу доступен
+===============================
+Первичное подключение. Проверка необходимости смены пароля
+=====================
+
+Сбор информации и установка
+Получение информации о VPS и установка прокси-сервера
+===============================
+На сервере обнаружена ОС Debian GNU/Linux 8 i686
+(ОК) Собрана информация о IPv6 адресах в системе. Количество: 101
+(ОК) Активных правил фаерволла не найдено
+(ИНФО) В системе обнаружены следующие активные интерфейсы: 
+eth0
+he-ipv6
+
+===============================
+(ОК) Добавлены DNS сервера OpenDNS
+(ОК) Добавлены IPv6 DNS OpenDNS
+(ОК) Проверка работы DNS-серверов выполнена успешно
+Правила обработки DNS успешно добавлены в автозапуск
+(ОК) Прокси-сервер не установлен
+(ИНФО) В файле с источниками обновлений закоментирована строка с источником CD-ROM.
+(ОК) Пакет проверки различия версий сопутствующего ПО удален.
+(ОК) Установлен весь необходимый сопутствующий софт, ОС успешно обновлена
+(ИНФО) Пытаемся скачать дистрибутив с http://userman071.7ci.ru/delegate9.9.13.tar.gz
+(ОК) Этап загрузки дистрибутива завершен
+(ОК) Этап распаковки дистрибутива завершен
+(ИНФО) Результат установки прокси-сервера:
+ 8380782 26342C78 debian-512mb-ams3-01
+====FINISHED====
+(ОК) Проверка работы прокси-сервера прошла успешно. Можно создавать процессы
+(ОК) Проверка наличия необходимых IP-адресов завершена
+
+=============================
+Настройки фаерволла:
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+
+● iptables.service
+   Loaded: not-found (Reason: No such file or directory)
+   Active: inactive (dead)
+
+=============================
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         _IP_ADDRESS_     _IP_ADDRESS_         UG        0 0          0 eth0
+_IP_ADDRESS_       *               _IP_ADDRESS_     U         0 0          0 eth0
+_IP_ADDRESS_     *               _IP_ADDRESS_   U         0 0          0 eth0
+=============================
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref Use If
+::1/128                        ::                         U    256 0     0 lo
+2001:470:1f14:7b7::1/128       ::                         U    1024 0     1 he-ipv6
+2001:470:1f14:7b7::/64         ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:0:e:d4e9:b6d1:f16/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:1:61:58:1e:c9/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:1:ca:b0:c100:39/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:1:6144:6:7792:906/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:2:3210:bb:23:fc/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:2:b121:33:2c6:8e7/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:3:a892:16:2b9:8/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:4:b:9:66:88/128  ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:4:b:217:8f0:2/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:4:c:b4c:3ec:3172/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:4:96:63c:9b:3be/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:4:a44:806:3:a9/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:6:6b:607:631:75/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:6:6fe:d1:8b:0/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:6:ea4:3:e2b:3/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:6:fbd3:d48:b50:93d/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:7:4:5643:51:dc6/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:7:d329:c9c:b32:16aa/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:8:48:d4a:52c:29/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:8:d008:f5:3b9a:483/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:9:c0:1b:a8a1:ac9/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:9:f1b:15:2c:a56b/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:a:9:6484:bd9:3ec/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:a:e0:be0a:d:a4a0/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:b:947:d:cf:4/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:f:4:ed4a:4a7f:f0/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:f:ab:a:55:440/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:11:9e:9:b:cf32/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:1b:793:5:4a83:e/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:33:7:f75:5:b65d/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:33:d0a:5:3:f93/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:35:7d:b:4:9a/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:35:f8b:8f6:0:7/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:3e:c0:32c:9e0:d/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:45:9e3:14cf:725:f/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:47:36c:2c:ea0c:ee/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:53:9fdf:7edc:5:81/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:6a:e:dac5:655e:8741/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:72:4e79:c:9:f113/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:78:256:35:53a:932/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:85:da50:6f:3dc1:2a7d/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:86:74:29:3ec7:63c/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:8c:2:7:3f:4/128  ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:a4:7b:f6dc:bc:8c42/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:ae:22:3f:e:fd84/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:b0:994f:20:93:29/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:ba:a1a:5:af:0/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:ba:bce:d:6c:e/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:bd:db:bca:6ade:7b/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:fa:d8:6aa:b45:5/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:186:b:23:50c2:32/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:1c2:9:67b:bc:86/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:1d6:ea8:5:a:0/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:23e:4:b68:762f:18b/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:263:b284:107c:11:0/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:28f:3:1f2:b7:9d55/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:4a0:9:9:b:2f8/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:509:cb6:2193:eec:ee21/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:553:3:1b5b:6:8/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:5ae:e51:cbcc:bb3:6535/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:5fd:5:55:285:3/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:661:ccc:1:bf5:540/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:77c:9e:3a:f5:ffd/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:845:8:7f47:a7f:1/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:96c:4:22:7e0:34/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:9e7:0:7495:e5f1:2810/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:a6e:a63:6b2b:3a:b/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:ac6:d:243d:3d:b046/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:b4b:42d:5:f0:8/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:ba0:5f:a:4d:7d/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:c99:f3d8:a271:1c2:612c/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:cb7:17:5:c:4ee/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:d55:1:58:60e:9d/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:df4:4:5:f:22e/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:e07:c92:fd:f5:42/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:e2c:4:6:27e4:797/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:e70:e119:b:8:405/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:eed:0:b:730:a4f2/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:f34:5:1ae2:8:90/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:f7f:fc4:5:e6:76/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:ff3:c66:72:cc0b:a/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:32f6:e9e:86:9:e/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:3c89:db:b0:bea0:6d1/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:469c:6:d8:b:21/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:4a8b:6:bb:e:390b/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:513b:3148:b8c:9:d5/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:64be:8ae:6f:ae29:10a6/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:748b:8:d2:2:8d/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:7e05:27f3:1e:5ad5:ab4/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:84e1:3aa:8c36:984:ff0/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:a505:b045:d:d:bf/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:a8c3:d962:5783:0:53e/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:a9d4:79f:c0d8:ff:5f/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:b180:5:1d:765:2cb/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:b317:e171:9dc:e514:1/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:be30:a88c:2aed:b:e7/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:cffa:d:16:eeb:ad/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:dde8:c0:10c0:4:4f2d/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:ec6d:358:6:36:c2/128 ::                         Un   256 0     0 he-ipv6
+2001:470:7af2:f77a:7436:982:90:160/128 ::                         Un   256 0     0 he-ipv6
+fe80::/64                      ::                         U    256 0     0 eth0
+fe80::/64                      ::                         Un   256 0     0 he-ipv6
+::/0                           2001:470:1f14:7b7::1       UG   1024 0     0 he-ipv6
+::/0                           ::                         !n   -1  1    28 lo
+::1/128                        ::                         Un   0   1    17 lo
+2001:470:1f14:7b7::2/128       ::                         Un   0   1     3 lo
+2001:470:7af2:0:e:d4e9:b6d1:f16/128 ::                         Un   0   1     0 lo
+2001:470:7af2:1:61:58:1e:c9/128 ::                         Un   0   1     0 lo
+2001:470:7af2:1:ca:b0:c100:39/128 ::                         Un   0   1     0 lo
+2001:470:7af2:1:6144:6:7792:906/128 ::                         Un   0   1     0 lo
+2001:470:7af2:2:3210:bb:23:fc/128 ::                         Un   0   1     0 lo
+2001:470:7af2:2:b121:33:2c6:8e7/128 ::                         Un   0   1     0 lo
+2001:470:7af2:3:a892:16:2b9:8/128 ::                         Un   0   1     0 lo
+2001:470:7af2:4:b:9:66:88/128  ::                         Un   0   1     0 lo
+2001:470:7af2:4:b:217:8f0:2/128 ::                         Un   0   1     0 lo
+2001:470:7af2:4:c:b4c:3ec:3172/128 ::                         Un   0   1     0 lo
+2001:470:7af2:4:96:63c:9b:3be/128 ::                         Un   0   1     0 lo
+2001:470:7af2:4:a44:806:3:a9/128 ::                         Un   0   1     0 lo
+2001:470:7af2:6:6b:607:631:75/128 ::                         Un   0   1     0 lo
+2001:470:7af2:6:6fe:d1:8b:0/128 ::                         Un   0   1     0 lo
+2001:470:7af2:6:ea4:3:e2b:3/128 ::                         Un   0   1     0 lo
+2001:470:7af2:6:fbd3:d48:b50:93d/128 ::                         Un   0   1     0 lo
+2001:470:7af2:7:4:5643:51:dc6/128 ::                         Un   0   1     0 lo
+2001:470:7af2:7:d329:c9c:b32:16aa/128 ::                         Un   0   1     0 lo
+2001:470:7af2:8:48:d4a:52c:29/128 ::                         Un   0   1     0 lo
+2001:470:7af2:8:d008:f5:3b9a:483/128 ::                         Un   0   1     0 lo
+2001:470:7af2:9:c0:1b:a8a1:ac9/128 ::                         Un   0   1     0 lo
+2001:470:7af2:9:f1b:15:2c:a56b/128 ::                         Un   0   1     0 lo
+2001:470:7af2:a:9:6484:bd9:3ec/128 ::                         Un   0   1     0 lo
+2001:470:7af2:a:e0:be0a:d:a4a0/128 ::                         Un   0   1     0 lo
+2001:470:7af2:b:947:d:cf:4/128 ::                         Un   0   1     0 lo
+2001:470:7af2:f:4:ed4a:4a7f:f0/128 ::                         Un   0   1     0 lo
+2001:470:7af2:f:ab:a:55:440/128 ::                         Un   0   1     0 lo
+2001:470:7af2:11:9e:9:b:cf32/128 ::                         Un   0   1     0 lo
+2001:470:7af2:1b:793:5:4a83:e/128 ::                         Un   0   1     0 lo
+2001:470:7af2:33:7:f75:5:b65d/128 ::                         Un   0   1     0 lo
+2001:470:7af2:33:d0a:5:3:f93/128 ::                         Un   0   1     0 lo
+2001:470:7af2:35:7d:b:4:9a/128 ::                         Un   0   1     0 lo
+2001:470:7af2:35:f8b:8f6:0:7/128 ::                         Un   0   1     0 lo
+2001:470:7af2:3e:c0:32c:9e0:d/128 ::                         Un   0   1     0 lo
+2001:470:7af2:45:9e3:14cf:725:f/128 ::                         Un   0   1     0 lo
+2001:470:7af2:47:36c:2c:ea0c:ee/128 ::                         Un   0   1     0 lo
+2001:470:7af2:53:9fdf:7edc:5:81/128 ::                         Un   0   1     0 lo
+2001:470:7af2:6a:e:dac5:655e:8741/128 ::                         Un   0   1     0 lo
+2001:470:7af2:72:4e79:c:9:f113/128 ::                         Un   0   1     0 lo
+2001:470:7af2:78:256:35:53a:932/128 ::                         Un   0   1     0 lo
+2001:470:7af2:85:da50:6f:3dc1:2a7d/128 ::                         Un   0   1     0 lo
+2001:470:7af2:86:74:29:3ec7:63c/128 ::                         Un   0   1     0 lo
+2001:470:7af2:8c:2:7:3f:4/128  ::                         Un   0   1     0 lo
+2001:470:7af2:a4:7b:f6dc:bc:8c42/128 ::                         Un   0   1     0 lo
+2001:470:7af2:ae:22:3f:e:fd84/128 ::                         Un   0   1     0 lo
+2001:470:7af2:b0:994f:20:93:29/128 ::                         Un   0   1     0 lo
+2001:470:7af2:ba:a1a:5:af:0/128 ::                         Un   0   1     0 lo
+2001:470:7af2:ba:bce:d:6c:e/128 ::                         Un   0   1     0 lo
+2001:470:7af2:bd:db:bca:6ade:7b/128 ::                         Un   0   1     0 lo
+2001:470:7af2:fa:d8:6aa:b45:5/128 ::                         Un   0   1     0 lo
+2001:470:7af2:186:b:23:50c2:32/128 ::                         Un   0   1     0 lo
+2001:470:7af2:1c2:9:67b:bc:86/128 ::                         Un   0   1     0 lo
+2001:470:7af2:1d6:ea8:5:a:0/128 ::                         Un   0   1     0 lo
+2001:470:7af2:23e:4:b68:762f:18b/128 ::                         Un   0   1     0 lo
+2001:470:7af2:263:b284:107c:11:0/128 ::                         Un   0   1     0 lo
+2001:470:7af2:28f:3:1f2:b7:9d55/128 ::                         Un   0   1     0 lo
+2001:470:7af2:4a0:9:9:b:2f8/128 ::                         Un   0   1     0 lo
+2001:470:7af2:509:cb6:2193:eec:ee21/128 ::                         Un   0   1     0 lo
+2001:470:7af2:553:3:1b5b:6:8/128 ::                         Un   0   1     0 lo
+2001:470:7af2:5ae:e51:cbcc:bb3:6535/128 ::                         Un   0   1     0 lo
+2001:470:7af2:5fd:5:55:285:3/128 ::                         Un   0   1     0 lo
+2001:470:7af2:661:ccc:1:bf5:540/128 ::                         Un   0   1     0 lo
+2001:470:7af2:77c:9e:3a:f5:ffd/128 ::                         Un   0   1     0 lo
+2001:470:7af2:845:8:7f47:a7f:1/128 ::                         Un   0   1     0 lo
+2001:470:7af2:96c:4:22:7e0:34/128 ::                         Un   0   1     0 lo
+2001:470:7af2:9e7:0:7495:e5f1:2810/128 ::                         Un   0   1     0 lo
+2001:470:7af2:a6e:a63:6b2b:3a:b/128 ::                         Un   0   1     0 lo
+2001:470:7af2:ac6:d:243d:3d:b046/128 ::                         Un   0   1     0 lo
+2001:470:7af2:b4b:42d:5:f0:8/128 ::                         Un   0   1     0 lo
+2001:470:7af2:ba0:5f:a:4d:7d/128 ::                         Un   0   1     0 lo
+2001:470:7af2:c99:f3d8:a271:1c2:612c/128 ::                         Un   0   1     0 lo
+2001:470:7af2:cb7:17:5:c:4ee/128 ::                         Un   0   1     0 lo
+2001:470:7af2:d55:1:58:60e:9d/128 ::                         Un   0   1     0 lo
+2001:470:7af2:df4:4:5:f:22e/128 ::                         Un   0   1     0 lo
+2001:470:7af2:e07:c92:fd:f5:42/128 ::                         Un   0   1     0 lo
+2001:470:7af2:e2c:4:6:27e4:797/128 ::                         Un   0   1     0 lo
+2001:470:7af2:e70:e119:b:8:405/128 ::                         Un   0   1     0 lo
+2001:470:7af2:eed:0:b:730:a4f2/128 ::                         Un   0   1     0 lo
+2001:470:7af2:f34:5:1ae2:8:90/128 ::                         Un   0   1     0 lo
+2001:470:7af2:f7f:fc4:5:e6:76/128 ::                         Un   0   1     0 lo
+2001:470:7af2:ff3:c66:72:cc0b:a/128 ::                         Un   0   1     0 lo
+2001:470:7af2:32f6:e9e:86:9:e/128 ::                         Un   0   1     0 lo
+2001:470:7af2:3c89:db:b0:bea0:6d1/128 ::                         Un   0   1     0 lo
+2001:470:7af2:469c:6:d8:b:21/128 ::                         Un   0   1     0 lo
+2001:470:7af2:4a8b:6:bb:e:390b/128 ::                         Un   0   1     0 lo
+2001:470:7af2:513b:3148:b8c:9:d5/128 ::                         Un   0   1     0 lo
+2001:470:7af2:64be:8ae:6f:ae29:10a6/128 ::                         Un   0   1     0 lo
+2001:470:7af2:748b:8:d2:2:8d/128 ::                         Un   0   1     0 lo
+2001:470:7af2:7e05:27f3:1e:5ad5:ab4/128 ::                         Un   0   1     0 lo
+2001:470:7af2:84e1:3aa:8c36:984:ff0/128 ::                         Un   0   1     0 lo
+2001:470:7af2:a505:b045:d:d:bf/128 ::                         Un   0   1     0 lo
+2001:470:7af2:a8c3:d962:5783:0:53e/128 ::                         Un   0   1     0 lo
+2001:470:7af2:a9d4:79f:c0d8:ff:5f/128 ::                         Un   0   1     0 lo
+2001:470:7af2:b180:5:1d:765:2cb/128 ::                         Un   0   1     0 lo
+2001:470:7af2:b317:e171:9dc:e514:1/128 ::                         Un   0   1     0 lo
+2001:470:7af2:be30:a88c:2aed:b:e7/128 ::                         Un   0   1     0 lo
+2001:470:7af2:cffa:d:16:eeb:ad/128 ::                         Un   0   1     0 lo
+2001:470:7af2:dde8:c0:10c0:4:4f2d/128 ::                         Un   0   1     0 lo
+2001:470:7af2:ec6d:358:6:36:c2/128 ::                         Un   0   1     0 lo
+2001:470:7af2:f77a:7436:982:90:160/128 ::                         Un   0   1     0 lo
+fe80::bca6:34ab/128            ::                         Un   0   1     0 lo
+fe80::601:aff:fe41:e201/128    ::                         Un   0   1     0 lo
+ff00::/8                       ::                         U    256 0     0 eth0
+ff00::/8                       ::                         U    256 0     0 he-ipv6
+::/0                           ::                         !n   -1  1    28 lo
+
+=============================
+Текущие процессы прокси-сервера:
+nobody   11205  0.0  1.0  11432  5412 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16000 --
+nobody   11209  0.0  1.0  11436  5380 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=31s]-P_IP_ADDRESS_:16001 --
+nobody   11213  0.0  1.0  11424  5496 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16002 --
+nobody   11217  0.0  1.0  11488  5444 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16003 --
+nobody   11221  0.0  1.0  11436  5400 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=31s]-P_IP_ADDRESS_:16004 --
+nobody   11225  0.0  1.0  11488  5392 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16005 --
+nobody   11229  0.0  1.0  11440  5452 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16006 --
+nobody   11233  0.0  1.0  11424  5420 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=31s]-P_IP_ADDRESS_:16007 --
+nobody   11237  0.0  1.0  11428  5408 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16008 --
+nobody   11241  0.0  1.0  11436  5432 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16009 --
+nobody   11245  0.0  1.0  11456  5488 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=31s]-P_IP_ADDRESS_:16010 --
+nobody   11249  0.0  1.0  11424  5432 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16011 --
+nobody   11253  0.0  1.0  11492  5480 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16012 --
+nobody   11257  0.0  1.0  11428  5432 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16013 --
+nobody   11261  0.0  1.0  11424  5432 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16014 --
+nobody   11265  0.0  1.0  11448  5464 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16015 --
+nobody   11269  0.0  1.0  11428  5416 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16016 --
+nobody   11273  0.0  1.0  11420  5392 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16017 --
+nobody   11277  0.0  1.0  11456  5368 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=31s]-P_IP_ADDRESS_:16018 --
+nobody   11281  0.0  1.0  11424  5360 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16019 --
+nobody   11285  0.0  1.0  11436  5480 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16020 --
+nobody   11289  0.0  1.0  11424  5392 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=31s]-P_IP_ADDRESS_:16021 --
+nobody   11293  0.0  1.0  11492  5432 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16022 --
+nobody   11297  0.0  1.0  11484  5464 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16023 --
+nobody   11301  0.0  1.0  11428  5404 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=31s]-P_IP_ADDRESS_:16024 --
+nobody   11305  0.0  1.0  11436  5408 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16025 --
+nobody   11309  0.0  1.0  11440  5392 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16026 --
+nobody   11313  0.0  1.0  11484  5392 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=31s]-P_IP_ADDRESS_:16027 --
+nobody   11317  0.0  1.0  11420  5404 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16028 --
+nobody   11321  0.0  1.0  11420  5404 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16029 --
+nobody   11325  0.0  1.0  11448  5484 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=30s]-P_IP_ADDRESS_:16030 --
+nobody   11329  0.0  1.0  11420  5496 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16031 --
+nobody   11333  0.0  1.0  11492  5412 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16032 --
+nobody   11337  0.0  1.0  11484  5400 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16033 --
+nobody   11341  0.0  1.0  11436  5468 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16034 --
+nobody   11345  0.0  1.0  11420  5460 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16035 --
+nobody   11349  0.0  1.0  11424  5400 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16036 --
+nobody   11353  0.0  1.0  11420  5500 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16037 --
+nobody   11357  0.0  1.0  11428  5484 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16038 --
+nobody   11361  0.0  1.0  11420  5424 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16039 --
+nobody   11365  0.0  1.0  11424  5440 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16040 --
+nobody   11369  0.0  1.0  11420  5368 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=16s]-P_IP_ADDRESS_:16041 --
+nobody   11373  0.0  1.0  11444  5408 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16042 --
+nobody   11377  0.0  1.0  11444  5428 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16043 --
+nobody   11381  0.0  1.0  11428  5500 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=16s]-P_IP_ADDRESS_:16044 --
+nobody   11385  0.0  1.0  11428  5428 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16045 --
+nobody   11389  0.0  1.0  11448  5436 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16046 --
+nobody   11393  0.0  1.0  11420  5468 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16047 --
+nobody   11397  0.0  1.0  11456  5392 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16048 --
+nobody   11401  0.0  1.0  11424  5408 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16049 --
+nobody   11405  0.0  1.0  11436  5380 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16050 --
+nobody   11409  0.0  1.0  11444  5388 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16051 --
+nobody   11413  0.0  1.0  11424  5504 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16052 --
+nobody   11417  0.0  1.0  11428  5472 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16053 --
+nobody   11421  0.0  1.0  11444  5392 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16054 --
+nobody   11425  0.0  1.0  11488  5412 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16055 --
+nobody   11429  0.0  1.0  11484  5396 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16056 --
+nobody   11433  0.0  1.0  11424  5356 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16057 --
+nobody   11437  0.0  1.0  11444  5500 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=16s]-P_IP_ADDRESS_:16058 --
+nobody   11441  0.0  1.0  11452  5392 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16059 --
+nobody   11445  0.0  1.0  11428  5408 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16060 --
+nobody   11449  0.0  1.0  11420  5428 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=16s]-P_IP_ADDRESS_:16061 --
+nobody   11453  0.0  1.0  11456  5340 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16062 --
+nobody   11457  0.0  1.0  11428  5396 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16063 --
+nobody   11461  0.0  1.0  11424  5428 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=16s]-P_IP_ADDRESS_:16064 --
+nobody   11465  0.0  1.0  11424  5404 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16065 --
+nobody   11469  0.0  1.0  11436  5360 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16066 --
+nobody   11473  0.0  1.0  11440  5396 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16067 --
+nobody   11477  0.0  1.0  11444  5412 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16068 --
+nobody   11481  0.0  1.0  11456  5440 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16069 --
+nobody   11485  0.0  1.0  11424  5376 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16070 --
+nobody   11489  0.0  1.0  11424  5440 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16071 --
+nobody   11493  0.0  1.0  11428  5356 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16072 --
+nobody   11497  0.0  1.0  11484  5376 ?        Ss   05:40   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0),IDLE=15s]-P_IP_ADDRESS_:16073 --
+nobody   11501  0.0  1.0  11440  5408 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16074 --
+nobody   11505  0.0  1.0  11444  5352 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16075 --
+nobody   11509  0.0  1.0  11428  5376 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16076 --
+nobody   11513  0.0  1.0  11428  5436 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16077 --
+nobody   11517  0.0  1.0  11424  5488 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16078 --
+nobody   11521  0.0  1.0  11428  5460 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16079 --
+nobody   11525  0.0  1.0  11436  5372 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16080 --
+nobody   11529  0.0  1.0  11440  5416 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16081 --
+nobody   11533  0.0  1.0  11420  5452 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16082 --
+nobody   11537  0.0  1.0  11424  5480 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16083 --
+nobody   11541  0.0  1.0  11428  5416 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16084 --
+nobody   11545  0.0  1.0  11440  5480 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16085 --
+nobody   11549  0.0  1.0  11440  5488 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16086 --
+nobody   11553  0.0  1.0  11424  5436 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16087 --
+nobody   11557  0.0  1.0  11420  5428 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16088 --
+nobody   11561  0.0  1.0  11420  5484 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16089 --
+nobody   11565  0.0  1.0  11428  5432 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16090 --
+nobody   11569  0.0  1.0  11420  5404 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16091 --
+nobody   11573  0.0  1.0  11424  5488 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16092 --
+nobody   11577  0.0  1.0  11456  5364 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16093 --
+nobody   11581  0.0  1.0  11424  5392 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16094 --
+nobody   11585  0.0  1.0  11444  5364 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16095 --
+nobody   11589  0.0  1.0  11424  5420 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16096 --
+nobody   11593  0.0  1.0  11452  5488 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16097 --
+nobody   11597  0.0  1.0  11424  5416 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16098 --
+nobody   11601  0.0  1.0  11420  5476 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16099 --
+nobody   11605  0.0  1.0  11420  5408 ?        Ss   05:41   0:00 /root/delegate/src/delegated -{000}[RPM=0.00(0.0 0.0 0.0)]-P_IP_ADDRESS_:16100 --
+

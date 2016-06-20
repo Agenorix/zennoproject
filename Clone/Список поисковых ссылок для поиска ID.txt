@@ -1,0 +1,4 @@
+https://vk.com/search?c[age_from]=23&c[age_to]=25&c[city]=1&c[country]=1&c[name]=1&c[photo]=1&c[section]=people&c[sex]=1
+https://new.vk.com/search?c%5Bage_from%5D=20&c%5Bage_to%5D=25&c%5Bcity%5D=1&c%5Bcountry%5D=1&c%5Bname%5D=1&c%5Bphoto%5D=1&c%5Bq%5D=Екатерина&c%5Bsection%5D=people&c%5Bsex%5D=1&c%5Bsection%5D=people
+https://new.vk.com/search?c%5Bage_from%5D=20&c%5Bage_to%5D=25&c%5Bcity%5D=1&c%5Bcountry%5D=1&c%5Bname%5D=1&c%5Bphoto%5D=1&c%5Bq%5D=светлана&c%5Bsection%5D=people&c%5Bsex%5D=1
+https://new.vk.com/search?c%5Bage_from%5D=20&c%5Bage_to%5D=25&c%5Bcity%5D=1&c%5Bcountry%5D=1&c%5Bname%5D=1&c%5Bphoto%5D=1&c%5Bq%5D=Ирина&c%5Bsection%5D=people&c%5Bsex%5D=1

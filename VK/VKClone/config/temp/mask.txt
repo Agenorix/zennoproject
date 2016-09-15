@@ -1,0 +1,5 @@
+C:\VKClone\data\mask\mask1.png
+C:\VKClone\data\mask\mask2.png
+C:\VKClone\data\mask\mask3.png
+C:\VKClone\data\mask\mask4.png
+C:\VKClone\data\mask\mask5.png
